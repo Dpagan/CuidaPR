@@ -1,0 +1,1547 @@
+<title>CuidaPR.org — Recursos y Servicios para Adultos Mayores y Cuidadores en Puerto Rico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Directorio centralizado y gratuito de recursos para cuidadores, personas con Alzheimer, adultos mayores y familias en Puerto Rico. Busca por categoria o municipio.">
+<style>
+:root {
+  --ocean: #0E7C86;
+  --ocean-deep: #095A62;
+  --ocean-soft: #D6F0F2;
+  --coral: #D45B44;
+  --coral-soft: #FCEAE6;
+  --gold: #E2A63D;
+  --gold-soft: #FDF4E1;
+  --sage: #4A8C6F;
+  --sage-soft: #E4F2EB;
+  --plum: #7B5EA7;
+  --plum-soft: #F0EAF7;
+
+  --bg: #FAFBF9;
+  --bg-alt: #F1F3EF;
+  --card: #FFFFFF;
+  --text: #1E2A24;
+  --text-mid: #4A5650;
+  --text-light: #7A857E;
+  --border: #D5DBD7;
+  --border-light: #E8ECE9;
+
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+  --shadow-hover: 0 4px 20px rgba(0,0,0,0.08);
+  --transition: 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ocean: #2DB8C4;
+    --ocean-deep: #1A8E98;
+    --ocean-soft: #112A2D;
+    --coral: #E8836F;
+    --coral-soft: #2E1F1A;
+    --gold: #F0BA55;
+    --gold-soft: #2A2210;
+    --sage: #5EAD87;
+    --sage-soft: #132A1E;
+    --plum: #A085CC;
+    --plum-soft: #1E1630;
+
+    --bg: #141816;
+    --bg-alt: #1C201E;
+    --card: #1E2220;
+    --text: #E4E8E5;
+    --text-mid: #A8B0AA;
+    --text-light: #6E776F;
+    --border: #2E3430;
+    --border-light: #262C28;
+    --shadow-card: 0 1px 3px rgba(0,0,0,0.2);
+    --shadow-hover: 0 4px 20px rgba(0,0,0,0.3);
+  }
+}
+:root[data-theme="dark"] {
+  --ocean: #2DB8C4; --ocean-deep: #1A8E98; --ocean-soft: #112A2D;
+  --coral: #E8836F; --coral-soft: #2E1F1A;
+  --gold: #F0BA55; --gold-soft: #2A2210;
+  --sage: #5EAD87; --sage-soft: #132A1E;
+  --plum: #A085CC; --plum-soft: #1E1630;
+  --bg: #141816; --bg-alt: #1C201E; --card: #1E2220;
+  --text: #E4E8E5; --text-mid: #A8B0AA; --text-light: #6E776F;
+  --border: #2E3430; --border-light: #262C28;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.2); --shadow-hover: 0 4px 20px rgba(0,0,0,0.3);
+}
+:root[data-theme="light"] {
+  --ocean: #0E7C86; --ocean-deep: #095A62; --ocean-soft: #D6F0F2;
+  --coral: #D45B44; --coral-soft: #FCEAE6;
+  --gold: #E2A63D; --gold-soft: #FDF4E1;
+  --sage: #4A8C6F; --sage-soft: #E4F2EB;
+  --plum: #7B5EA7; --plum-soft: #F0EAF7;
+  --bg: #FAFBF9; --bg-alt: #F1F3EF; --card: #FFFFFF;
+  --text: #1E2A24; --text-mid: #4A5650; --text-light: #7A857E;
+  --border: #D5DBD7; --border-light: #E8ECE9;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+  --shadow-hover: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,h2,h3,h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+  text-wrap: balance;
+  color: var(--text);
+}
+
+a { color: var(--ocean); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--ocean-deep); }
+a:focus-visible { outline: 2px solid var(--ocean); outline-offset: 3px; border-radius: 3px; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ── Emergency Strip ── */
+.emergency-strip {
+  background: var(--coral);
+  color: #fff;
+  padding: 8px 0;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.emergency-strip .container {
+  display: flex; flex-wrap: wrap; gap: 6px 24px; align-items: center; justify-content: center;
+}
+.emergency-strip a { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+
+/* ── Header ── */
+.header {
+  background: var(--card);
+  border-bottom: 1px solid var(--border-light);
+  padding: 14px 0;
+  position: sticky; top: 0; z-index: 100;
+}
+.header .container { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.logo {
+  font-family: Georgia, serif; font-size: 24px; font-weight: 700; color: var(--ocean);
+  display: flex; align-items: center; gap: 10px;
+}
+.logo-icon {
+  width: 36px; height: 36px; background: var(--ocean); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px;
+}
+.header-actions { display: flex; align-items: center; gap: 8px; }
+
+/* ── Nav Tabs ── */
+.nav-tabs {
+  background: var(--card);
+  border-bottom: 1px solid var(--border-light);
+  padding: 0;
+  overflow-x: auto;
+}
+.nav-tabs .container { display: flex; gap: 0; }
+.nav-tab {
+  padding: 14px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-mid);
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--transition), border-color var(--transition);
+  background: none; border-top: none; border-left: none; border-right: none;
+  font-family: inherit;
+}
+.nav-tab:hover { color: var(--ocean); }
+.nav-tab.active { color: var(--ocean); border-bottom-color: var(--ocean); }
+
+/* ── Hero ── */
+.hero {
+  background: linear-gradient(160deg, #0A5E66 0%, #0E7C86 40%, #14969F 100%);
+  color: #fff;
+  padding: 64px 0 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.06) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.04) 0%, transparent 50%);
+}
+.hero > * { position: relative; }
+.hero h1 { font-size: clamp(26px, 4.5vw, 42px); margin-bottom: 14px; font-weight: 700; }
+.hero p { font-size: 18px; max-width: 580px; margin: 0 auto 32px; opacity: 0.9; line-height: 1.55; }
+
+/* ── Search ── */
+.search-wrap {
+  max-width: 540px; margin: 0 auto; position: relative;
+}
+.search-wrap input {
+  width: 100%; padding: 16px 20px 16px 50px;
+  background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.25);
+  border-radius: 12px; font-size: 17px; color: #fff; outline: none;
+  transition: background var(--transition), border-color var(--transition);
+  font-family: inherit;
+}
+.search-wrap input::placeholder { color: rgba(255,255,255,0.6); }
+.search-wrap input:focus { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.5); }
+.search-wrap .search-icon {
+  position: absolute; left: 16px; top: 50%; transform: translateY(-50%); opacity: 0.6;
+}
+
+/* ── View Toggle ── */
+.view-toggle {
+  display: flex; gap: 0; background: var(--bg-alt); border-radius: 10px; padding: 4px;
+  margin: 0 auto 8px; width: fit-content;
+}
+.view-btn {
+  padding: 10px 24px; border-radius: 8px; font-size: 15px; font-weight: 600;
+  cursor: pointer; border: none; background: none; color: var(--text-mid);
+  font-family: inherit; transition: all var(--transition);
+}
+.view-btn.active { background: var(--card); color: var(--ocean); box-shadow: var(--shadow-card); }
+
+/* ── Category View ── */
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 32px 0;
+}
+.cat-card {
+  background: var(--card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 24px 22px;
+  cursor: pointer;
+  transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition);
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.cat-card:hover { box-shadow: var(--shadow-hover); border-color: var(--ocean); transform: translateY(-2px); }
+.cat-card:focus-visible { outline: 2px solid var(--ocean); outline-offset: 2px; }
+.cat-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; margin-bottom: 14px;
+}
+.cat-card h3 { font-size: 18px; margin-bottom: 6px; }
+.cat-card p { font-size: 14px; color: var(--text-mid); line-height: 1.5; margin-bottom: 10px; }
+.cat-count { font-size: 12px; font-weight: 700; color: var(--ocean); letter-spacing: 0.03em; text-transform: uppercase; }
+
+/* ── Category Section ── */
+.category-section {
+  padding: 40px 0 48px;
+  border-top: 1px solid var(--border-light);
+  display: none;
+}
+.category-section.visible { display: block; }
+.category-section h2 {
+  font-size: 26px; margin-bottom: 6px; color: var(--ocean);
+}
+.category-section > .container > .section-desc {
+  color: var(--text-mid); margin-bottom: 24px; max-width: 680px; font-size: 15px;
+}
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 14px; font-weight: 600; color: var(--ocean);
+  margin-bottom: 20px; cursor: pointer; background: none; border: none;
+  font-family: inherit;
+}
+.back-link:hover { color: var(--ocean-deep); }
+
+/* ── Resource Cards ── */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+}
+.resource-card {
+  background: var(--card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  transition: border-color var(--transition);
+}
+.resource-card:hover { border-color: var(--border); }
+.resource-card h4 {
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px; font-weight: 700; margin-bottom: 4px; color: var(--text); line-height: 1.35;
+}
+.tag {
+  display: inline-block; font-size: 11px; font-weight: 700; padding: 3px 8px;
+  border-radius: 5px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px;
+}
+.tag-ocean { background: var(--ocean-soft); color: var(--ocean); }
+.tag-coral { background: var(--coral-soft); color: var(--coral); }
+.tag-gold { background: var(--gold-soft); color: var(--gold); }
+.tag-sage { background: var(--sage-soft); color: var(--sage); }
+.tag-plum { background: var(--plum-soft); color: var(--plum); }
+.resource-desc { font-size: 14px; color: var(--text-mid); line-height: 1.5; margin-bottom: 14px; }
+.resource-contact { display: flex; flex-direction: column; gap: 4px; }
+.phone {
+  font-size: 17px; font-weight: 800; color: var(--ocean);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+.phone a { color: var(--ocean); font-weight: 800; }
+.address { font-size: 14px; color: var(--text-mid); font-style: normal; font-weight: 600; }
+.web { font-size: 14px; font-weight: 600; }
+.web a { font-weight: 600; }
+
+/* ── Emergency Box ── */
+.emergency-box {
+  background: var(--coral-soft);
+  border: 1px solid var(--coral);
+  border-left: 4px solid var(--coral);
+  border-radius: var(--radius-sm);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.emergency-box h3 {
+  color: var(--coral); font-size: 17px; margin-bottom: 14px;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+.emergency-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px;
+}
+.emergency-item { display: flex; flex-direction: column; }
+.emergency-label { font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
+.emergency-number { font-size: 22px; font-weight: 900; color: var(--coral); font-variant-numeric: tabular-nums; }
+.emergency-number a { color: var(--coral); }
+
+/* ── Municipio View ── */
+.municipio-view { display: none; padding: 32px 0; }
+.municipio-view.visible { display: block; }
+.municipio-search-wrap {
+  max-width: 400px; margin: 0 0 24px; position: relative;
+}
+.municipio-search-wrap input {
+  width: 100%; padding: 12px 16px 12px 42px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); font-size: 15px; color: var(--text); outline: none;
+  font-family: inherit;
+}
+.municipio-search-wrap input:focus { border-color: var(--ocean); }
+.municipio-search-wrap .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); opacity: 0.4; }
+.municipio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+.municipio-btn {
+  background: var(--card); border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm); padding: 14px 16px;
+  font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer;
+  transition: all var(--transition); text-align: left; font-family: inherit;
+}
+.municipio-btn:hover { border-color: var(--ocean); color: var(--ocean); background: var(--ocean-soft); }
+.municipio-btn .muni-count { font-size: 12px; color: var(--text-light); font-weight: 400; display: block; }
+.municipio-detail { display: none; padding: 32px 0; }
+.municipio-detail.visible { display: block; }
+
+/* ── Disclaimer ── */
+.disclaimer {
+  background: var(--bg-alt); border-radius: var(--radius); padding: 24px;
+  margin: 40px 0; font-size: 14px; color: var(--text-mid); line-height: 1.65;
+  border: 1px solid var(--border-light);
+}
+.disclaimer strong { color: var(--text); }
+
+/* ── Footer ── */
+.footer {
+  background: var(--text); color: rgba(255,255,255,0.65); padding: 40px 0;
+  font-size: 14px; text-align: center; line-height: 1.7;
+}
+.footer strong { color: #fff; }
+.footer a { color: rgba(255,255,255,0.8); }
+
+/* ── Quick Access Grid ── */
+.quick-access {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  padding: 24px 0;
+}
+.quick-card {
+  background: var(--card); border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm); padding: 16px;
+  display: flex; align-items: center; gap: 14px;
+  cursor: pointer; transition: all var(--transition);
+  text-decoration: none; color: inherit;
+}
+.quick-card:hover { border-color: var(--ocean); box-shadow: var(--shadow-card); }
+.quick-card .qicon {
+  width: 40px; height: 40px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
+}
+.quick-card .qlabel { font-size: 14px; font-weight: 600; color: var(--text); }
+.quick-card .qsub { font-size: 12px; color: var(--text-light); }
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .cat-grid { grid-template-columns: 1fr; }
+  .resource-grid { grid-template-columns: 1fr; }
+  .municipio-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero { padding: 40px 0 36px; }
+  .hero h1 { font-size: 24px; }
+  .emergency-grid { grid-template-columns: repeat(2, 1fr); }
+  .quick-access { grid-template-columns: 1fr 1fr; }
+  .nav-tab { padding: 12px 12px; font-size: 13px; }
+}
+
+[id] { scroll-margin-top: 70px; }
+.hidden { display: none !important; }
+</style>
+
+<!-- Emergency Strip -->
+<div class="emergency-strip">
+  <div class="container">
+    <span><strong>Emergencia:</strong> <a href="tel:911">911</a></span>
+    <span>Maltrato: <a href="tel:18009818333">1-800-981-8333</a></span>
+    <span>Apoyo: <a href="tel:18883597777">1-888-359-7777</a></span>
+    <span>Salud Mental: <a href="tel:988">9-8-8</a></span>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <div class="logo-icon">&#x2764;</div>
+      CuidaPR<span style="font-weight:400;opacity:0.45">.org</span>
+    </div>
+    <div class="header-actions">
+      <span style="font-size:13px;color:var(--text-light)">Directorio gratuito de servicios</span>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="container">
+    <h1>Encuentra recursos y servicios para tu familia</h1>
+    <p>Un directorio centralizado y gratuito para cuidadores, personas con Alzheimer, adultos mayores y familias en Puerto Rico.</p>
+    <div class="search-wrap">
+      <svg class="search-icon" width="20" height="20" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="globalSearch" placeholder="Buscar por nombre, servicio o municipio..." aria-label="Buscar recursos">
+    </div>
+  </div>
+</section>
+
+<!-- View Toggle -->
+<section style="padding: 28px 0 0;">
+  <div class="container">
+    <div class="view-toggle">
+      <button class="view-btn active" onclick="showView('categoria')" id="btnCat">Por Categoria</button>
+      <button class="view-btn" onclick="showView('municipio')" id="btnMuni">Por Municipio</button>
+    </div>
+  </div>
+</section>
+
+<!-- Quick Access -->
+<section style="padding: 0;">
+  <div class="container">
+    <div class="quick-access">
+      <a class="quick-card" href="tel:211">
+        <div class="qicon" style="background:var(--ocean-soft)">&#x1F4DE;</div>
+        <div><div class="qlabel">Llama al 2-1-1</div><div class="qsub">Informacion y referidos</div></div>
+      </a>
+      <a class="quick-card" href="tel:18009818333">
+        <div class="qicon" style="background:var(--coral-soft)">&#x1F6A8;</div>
+        <div><div class="qlabel">Linea de Maltrato</div><div class="qsub">24/7 — 1-800-981-8333</div></div>
+      </a>
+      <a class="quick-card" href="tel:18889712013">
+        <div class="qicon" style="background:var(--sage-soft)">&#x1F49A;</div>
+        <div><div class="qlabel">AARP Cuidadores</div><div class="qsub">1-888-971-2013</div></div>
+      </a>
+      <a class="quick-card" href="tel:988">
+        <div class="qicon" style="background:var(--plum-soft)">&#x1F9E0;</div>
+        <div><div class="qlabel">Linea PAS — Salud Mental</div><div class="qsub">9-8-8 (24/7, gratis)</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CATEGORY VIEW ═══════════════ -->
+<div id="categoryView">
+  <div class="container">
+    <div class="cat-grid" id="catGrid">
+
+      <div class="cat-card" onclick="showCategory('alzheimer')" tabindex="0" role="button">
+        <div class="cat-icon" style="background:var(--plum-soft)">&#x1F9E0;</div>
+        <h3>Alzheimer y Demencia</h3>
+        <p>Asociaciones, centros terapeuticos, directorios especializados y servicios por municipio.</p>
+        <span class="cat-count">10+ organizaciones &middot; 8 municipios</span>
+      </div>
+
+      <div class="cat-card" onclick="showCategory('cuidadores')" tabindex="0" role="button">
+        <div class="cat-icon" style="background:var(--sage-soft)">&#x1F91D;</div>
+        <h3>Cuidadores Familiares</h3>
+        <p>Programas de respiro, apoyo emocional, orientacion y recursos para quienes cuidan a un ser querido.</p>
+        <span class="cat-count">8+ programas</span>
+      </div>
+
+      <div class="cat-card" onclick="showCategory('mayores')" tabindex="0" role="button">
+        <div class="cat-icon" style="background:var(--gold-soft)">&#x1F9D3;</div>
+        <h3>Personas Mayores</h3>
+        <p>OPPEA, CAMPEA, centros de actividades, programas municipales, beneficios y descuentos.</p>
+        <span class="cat-count">12+ servicios</span>
+      </div>
+
+      <div class="cat-card" onclick="showCategory('homecare')" tabindex="0" role="button">
+        <div class="cat-icon" style="background:var(--ocean-soft)">&#x1F3E0;</div>
+        <h3>Cuido en el Hogar</h3>
+        <p>Enfermeria a domicilio, amas de llaves, cuidadoras, home care y asistencia personalizada.</p>
+        <span class="cat-count">10+ proveedores</span>
+      </div>
+
+      <div class="cat-card" onclick="showCategory('hogares')" tabindex="0" role="button">
+        <div class="cat-icon" style="background:var(--coral-soft)">&#x1F3E5;</div>
+        <h3>Hogares de Envejecientes</h3>
+        <p>Directorio de hogares y facilidades de cuido a largo plazo organizados por municipio.</p>
+        <span class="cat-count">78 municipios</span>
+      </div>
+
+      <div class="cat-card" onclick="showCategory('salud')" tabindex="0" role="button">
+        <div class="cat-icon" style="background:var(--sage-soft)">&#x2695;</div>
+        <h3>Salud y Rehabilitacion</h3>
+        <p>Salud mental, rehabilitacion fisica, hospicio, telemedicina, farmacias y equipo medico.</p>
+        <span class="cat-count">15+ servicios</span>
+      </div>
+
+      <div class="cat-card" onclick="showCategory('apoyo')" tabindex="0" role="button">
+        <div class="cat-icon" style="background:var(--plum-soft)">&#x1F49C;</div>
+        <h3>Grupos de Apoyo</h3>
+        <p>Grupos de apoyo emocional, talleres, comunidades para cuidadores y familias.</p>
+        <span class="cat-count">30+ grupos</span>
+      </div>
+
+      <div class="cat-card" onclick="showCategory('legal')" tabindex="0" role="button">
+        <div class="cat-icon" style="background:var(--gold-soft)">&#x2696;</div>
+        <h3>Ayuda Legal y Beneficios</h3>
+        <p>Servicios legales gratuitos, Seguro Social, Medicare, Plan Vital, creditos contributivos.</p>
+        <span class="cat-count">8+ recursos</span>
+      </div>
+
+      <div class="cat-card" onclick="showCategory('transporte')" tabindex="0" role="button">
+        <div class="cat-icon" style="background:var(--ocean-soft)">&#x1F698;</div>
+        <h3>Transporte y Nutricion</h3>
+        <p>Transporte medico, paratransito, programas de alimentacion y asistencia nutricional.</p>
+        <span class="cat-count">6+ servicios</span>
+      </div>
+
+      <div class="cat-card" onclick="showCategory('emergencias')" tabindex="0" role="button">
+        <div class="cat-icon" style="background:var(--coral-soft)">&#x1F6A8;</div>
+        <h3>Emergencias y Proteccion</h3>
+        <p>Lineas de emergencia 24/7, proteccion contra maltrato, ordenes de proteccion.</p>
+        <span class="cat-count">6 lineas directas</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ CATEGORY SECTIONS ═══════════════ -->
+
+<!-- ALZHEIMER -->
+<div class="category-section" id="sec-alzheimer">
+  <div class="container">
+    <button class="back-link" onclick="showCatGrid()">&#8592; Volver a categorias</button>
+    <h2>Alzheimer y Demencia</h2>
+    <p class="section-desc">Organizaciones especializadas, centros terapeuticos y recursos para pacientes con Alzheimer, demencia y sus familias.</p>
+    <div class="resource-grid">
+      <div class="resource-card" data-muni="san juan" data-cat="alzheimer">
+        <span class="tag tag-plum">San Juan</span>
+        <h4>Asociacion de Alzheimer de Puerto Rico</h4>
+        <p class="resource-desc">Educacion, orientacion y mas de 30 grupos de apoyo alrededor de la isla para pacientes y cuidadores. Talleres y capacitaciones.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7872686818">(787) 268-6818</a> / <a href="tel:7877274151">(787) 727-4151</a></span>
+          <address class="address">Edif. La Electronica, 1608 Calle Bori, Suite 319, San Juan PR 00927</address>
+          <span class="web"><a href="https://alzheimerpr.com" target="_blank" rel="noopener">alzheimerpr.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="san juan" data-cat="alzheimer">
+        <span class="tag tag-plum">San Juan</span>
+        <h4>De Frente al Alzheimer, Inc.</h4>
+        <p class="resource-desc">Concientizacion, educacion y apoyo economico para pacientes de bajos recursos diagnosticados con Alzheimer.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7875989844">(787) 598-9844</a></span>
+          <span class="web"><a href="https://defrentepr.com" target="_blank" rel="noopener">defrentepr.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="alzheimer">
+        <span class="tag tag-ocean">Toda la Isla</span>
+        <h4>OPAPA — Organizacion Pro Atencion Alzheimer</h4>
+        <p class="resource-desc">Terapias integradas no farmacologicas, estimulacion cognitiva, patologia del habla, educacion fisica y recreacion. Educa a cuidadores.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7876961159">(787) 696-1159</a> / <a href="tel:9392319618">(939) 231-9618</a></span>
+          <span class="web"><a href="https://www.opapapr.org" target="_blank" rel="noopener">opapapr.org</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="alzheimer">
+        <span class="tag tag-ocean">Toda la Isla</span>
+        <h4>Mente Activa</h4>
+        <p class="resource-desc">Salud cognitiva, mejora de calidad de vida para adultos mayores y personas con cualquier forma de demencia y sus cuidadores.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7876770503">(787) 677-0503</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="alzheimer">
+        <span class="tag tag-ocean">Directorio</span>
+        <h4>Directorio de Alzheimer para Puerto Rico</h4>
+        <p class="resource-desc">Portal dedicado donde encontrar servicios, negocios y eventos para pacientes con Alzheimer y sus cuidadores en toda la isla.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="http://directorioalzheimer.com" target="_blank" rel="noopener">directorioalzheimer.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="guaynabo" data-cat="alzheimer">
+        <span class="tag tag-sage">Guaynabo</span>
+        <h4>Centro Terapeutico de Alzheimer de Edad Avanzada</h4>
+        <p class="resource-desc">Centro especializado con servicios de terapia ocupacional para pacientes con Alzheimer.</p>
+        <div class="resource-contact">
+          <address class="address">Barrio Santa Rosa #2, Guaynabo</address>
+          <span class="phone">Ext. 1709, 1700, 1708</span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="cayey" data-cat="alzheimer">
+        <span class="tag tag-sage">Cayey</span>
+        <h4>Centro de Respiro y Rehabilitacion San Francisco</h4>
+        <p class="resource-desc">Centro de respiro y rehabilitacion para pacientes con Alzheimer y condiciones relacionadas.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877383492">(787) 738-3492</a></span>
+          <address class="address">Carr. 715 Km 0.7, Cayey</address>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="cidra" data-cat="alzheimer">
+        <span class="tag tag-sage">Cidra</span>
+        <h4>Centro Cidreno de Eterna Primavera</h4>
+        <p class="resource-desc">Centro especializado en servicios para personas con Alzheimer y demencia en la zona central.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877141417">(787) 714-1417</a></span>
+          <address class="address">Carr. 171 Km. 2.0, Cidra</address>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="carolina" data-cat="alzheimer">
+        <span class="tag tag-sage">Carolina</span>
+        <h4>Centro Alzheimer de Carolina</h4>
+        <p class="resource-desc">Centro especializado en Alzheimer en el area de Carolina.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877574011">(787) 757-4011</a></span>
+          <address class="address">Valle Arriba Heights, Carolina</address>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="varios" data-cat="alzheimer">
+        <span class="tag tag-gold">Terapia por Municipio</span>
+        <h4>Programa de Centros Comunitarios — Alzheimer</h4>
+        <p class="resource-desc">Terapia ocupacional, orientacion, socializacion, enfermeria y recreacion (4 horas diarias) en centros comunitarios.</p>
+        <div class="resource-contact">
+          <span class="phone" style="font-size:14px;">
+            Cabo Rojo <a href="tel:7878511025">(787) 851-1025</a><br>
+            Fajardo <a href="tel:7878630429">(787) 863-0429</a><br>
+            Isabela <a href="tel:7878302775">(787) 830-2775</a><br>
+            San German <a href="tel:7872642468">(787) 264-2468</a><br>
+            San Juan <a href="tel:7874804230">(787) 480-4230</a>
+          </span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="alzheimer">
+        <span class="tag tag-ocean">Cuido Residencial</span>
+        <h4>Villa Serena — Insignia Senior Living</h4>
+        <p class="resource-desc">Hogares especializados para personas con Alzheimer con programas Seasons de apoyo emocional y cognitivo. Cuido 24 horas.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.insigniaseniorliving.com/villaserena-esp/" target="_blank" rel="noopener">insigniaseniorliving.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="alzheimer">
+        <span class="tag tag-ocean">Cuido de Memoria</span>
+        <h4>Seasons Memory Care</h4>
+        <p class="resource-desc">Comunidades especializadas en cuido de memoria con programas terapeuticos estructurados para personas con demencia.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://seasonsmemory.com" target="_blank" rel="noopener">seasonsmemory.com</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CUIDADORES -->
+<div class="category-section" id="sec-cuidadores">
+  <div class="container">
+    <button class="back-link" onclick="showCatGrid()">&#8592; Volver a categorias</button>
+    <h2>Cuidadores Familiares</h2>
+    <p class="section-desc">Programas gubernamentales y privados de respiro, orientacion y apoyo para quienes cuidan de un familiar.</p>
+    <div class="resource-grid">
+      <div class="resource-card" data-muni="san juan" data-cat="cuidadores">
+        <span class="tag tag-sage">Gobierno — Region 1</span>
+        <h4>Programa de Apoyo al Cuidador Familiar — San Juan</h4>
+        <p class="resource-desc">Cuido en hogar, ama de llaves, cuido institucional temporero, equipo medico, suplementos nutricionales, incontinencia y sistema Lifeline.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877216121">(787) 721-6121</a> ext. 1245, 1309, 1378</span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="ponce" data-cat="cuidadores">
+        <span class="tag tag-sage">Gobierno — Region 2</span>
+        <h4>Programa de Apoyo al Cuidador Familiar — Ponce</h4>
+        <p class="resource-desc">Mismos servicios de respiro y apoyo en la region sur de Puerto Rico.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7878411180">(787) 841-1180</a> / <a href="tel:7878411181">(787) 841-1181</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="cuidadores">
+        <span class="tag tag-ocean">Toda la Isla</span>
+        <h4>PAMA — Amigos Mayores Acompanantes</h4>
+        <p class="resource-desc">Respiro gratuito en el hogar para personas con Alzheimer temprano o demencia. Companerismo para que cuidadores descansen.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877216121">(787) 721-6121</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="cuidadores">
+        <span class="tag tag-ocean">Toda la Isla</span>
+        <h4>AARP Puerto Rico — Linea de Cuidadores</h4>
+        <p class="resource-desc">Guia impresa de recursos, directorio de servicios, videos, articulos y localizador de servicios en linea por municipio.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:18889712013">1-888-971-2013</a> (gratis)</span>
+          <span class="web"><a href="https://states.aarp.org/puerto-rico/recursos-cuidar" target="_blank" rel="noopener">AARP Guia de Recursos</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="cuidadores">
+        <span class="tag tag-ocean">Toda la Isla</span>
+        <h4>Delia's Respite for Caregivers</h4>
+        <p class="resource-desc">Entrenamiento continuo para cuidadores con enfoque en bienestar fisico, emocional y social a traves del autocuidado.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7876770503">(787) 677-0503</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="cuidadores">
+        <span class="tag tag-ocean">Toda la Isla</span>
+        <h4>2-1-1 Puerto Rico — Informacion y Referidos</h4>
+        <p class="resource-desc">Especialistas de informacion y referidos. Base de datos buscable en linea de todos los servicios disponibles por municipio.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:211">2-1-1</a></span>
+          <span class="web"><a href="https://211pr.org" target="_blank" rel="noopener">211pr.org</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="cuidadores">
+        <span class="tag tag-plum">En Linea</span>
+        <h4>CuidadorAlzheimer.org</h4>
+        <p class="resource-desc">Portal educativo con recursos, informacion y herramientas para cuidadores de personas con Alzheimer.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://cuidadoralzheimer.org" target="_blank" rel="noopener">cuidadoralzheimer.org</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="cuidadores">
+        <span class="tag tag-sage">Gobierno</span>
+        <h4>Registro de Cuidadores — Depto. de la Familia</h4>
+        <p class="resource-desc">Plataforma web oficial del Departamento de la Familia para el registro de cuidadores informales en Puerto Rico.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://cuidadoresinformales.familia.pr.gov" target="_blank" rel="noopener">cuidadoresinformales.familia.pr.gov</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERSONAS MAYORES -->
+<div class="category-section" id="sec-mayores">
+  <div class="container">
+    <button class="back-link" onclick="showCatGrid()">&#8592; Volver a categorias</button>
+    <h2>Personas Mayores</h2>
+    <p class="section-desc">Servicios gubernamentales, centros de actividades, programas municipales y beneficios para adultos de 60 anos o mas.</p>
+    <div class="resource-grid">
+      <div class="resource-card" data-muni="toda la isla" data-cat="mayores">
+        <span class="tag tag-sage">Gobierno</span>
+        <h4>OPPEA — Procurador de Personas de Edad Avanzada</h4>
+        <p class="resource-desc">Educacion, planificacion financiera, salud, seguridad, derechos, vivienda, transporte y recreacion. Directorio completo de servicios.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877216121">(787) 721-6121</a></span>
+          <span class="web"><a href="https://www.oppea.pr.gov" target="_blank" rel="noopener">oppea.pr.gov</a> &middot; <a href="https://www.oppea.pr.gov/directorio-de-servicios-copy" target="_blank" rel="noopener">Directorio de Servicios</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="mayores">
+        <span class="tag tag-sage">Gobierno</span>
+        <h4>ADFAN — Servicios de Edad Avanzada</h4>
+        <p class="resource-desc">Centros de cuido diurno, auxiliares en el hogar, proteccion social. Registro de centros licenciados y certificados (actualizado mensualmente).</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://adfan.pr.gov/AdministracionesAuxiliares/ServiciosEdadAvanzada/" target="_blank" rel="noopener">adfan.pr.gov</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="mayores">
+        <span class="tag tag-sage">Gobierno</span>
+        <h4>CAMPEA — Centros de Actividades Multiples</h4>
+        <p class="resource-desc">Centros de actividades para personas de 60+ anos. Cuido y servicios que contribuyen al bienestar. Cibercafes en 9 municipios.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877216121">(787) 721-6121</a></span>
+          <span class="web"><a href="https://adfan.pr.gov/AdministracionesAuxiliares/ServiciosEdadAvanzada/Opusculos%20ADFAN/2025%20-%20Brochure%20-%20CAMPEA.pdf" target="_blank" rel="noopener">Folleto CAMPEA (PDF)</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="mayores">
+        <span class="tag tag-sage">Gobierno</span>
+        <h4>Programa de Geriatria — Depto. de Salud</h4>
+        <p class="resource-desc">Programas de salud y nutricion. Administra Medicaid y otros servicios medicos para personas de edad avanzada.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877652929">(787) 765-2929</a> ext. 4133, 4430</span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="mayores">
+        <span class="tag tag-gold">Beneficio</span>
+        <h4>Descuentos y Beneficios — Edad Avanzada</h4>
+        <p class="resource-desc">Fila expreso en oficinas, 50% descuento en actividades gubernamentales, 50% transporte publico, gratis 75+. Activo en CESCO Digital (60+).</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.salud.pr.gov/CMS/37" target="_blank" rel="noopener">Tarjeta de descuentos</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="bayamon" data-cat="mayores">
+        <span class="tag tag-ocean">Bayamon</span>
+        <h4>Servicios para Envejecientes — Bayamon</h4>
+        <p class="resource-desc">Programas y servicios municipales para ciudadanos de edad avanzada.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877805552">(787) 780-5552</a></span>
+          <span class="web"><a href="https://www.municipiodebayamon.com/servicios-municipales/familia/servicios-para-envejecientes/" target="_blank" rel="noopener">municipiodebayamon.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="bayamon" data-cat="mayores">
+        <span class="tag tag-ocean">Bayamon</span>
+        <h4>Grown Ups — Centro de Actividades</h4>
+        <p class="resource-desc">Actividades disenadas para que adultos mayores disfruten, socialicen y se mantengan activos.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7875287770">(787) 528-7770</a></span>
+          <address class="address">CC Jardines de Caparra #4, Bayamon</address>
+          <span class="web"><a href="https://grownupspr.com" target="_blank" rel="noopener">grownupspr.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="caguas" data-cat="mayores">
+        <span class="tag tag-ocean">Caguas</span>
+        <h4>Servicios a Adultos Mayores — Caguas</h4>
+        <p class="resource-desc">Nutricion, actividades recreativas y culturales, transporte especial PARATRANSITO y servicios de salud.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://caguas.gov.pr/adultosmayores/" target="_blank" rel="noopener">caguas.gov.pr</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="carolina" data-cat="mayores">
+        <span class="tag tag-ocean">Carolina</span>
+        <h4>Servicios Tercera Edad — Carolina</h4>
+        <p class="resource-desc">Centros: Diamantino, Estrellitas y Centro de La Ceramica.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.municipiocarolina.com" target="_blank" rel="noopener">municipiocarolina.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="mayores">
+        <span class="tag tag-gold">Directorio</span>
+        <h4>Mi Gente Grande — Telefonos Municipales</h4>
+        <p class="resource-desc">Directorio con telefonos de los 78 municipios para servicios a adultos mayores. Solicite la oficina de envejecientes.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.migentegrande.com/llama-a-tu-municipio-para-ayuda-al-adulto-mayor/" target="_blank" rel="noopener">migentegrande.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="mayores">
+        <span class="tag tag-gold">Directorio</span>
+        <h4>CAAMPR — Centro de Ayuda al Adulto Mayor</h4>
+        <p class="resource-desc">Orientacion en fraude, robo de identidad y asuntos que afectan a adultos mayores.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877710660">(787) 771-0660</a></span>
+          <span class="web"><a href="https://caampr.org" target="_blank" rel="noopener">caampr.org</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOME CARE -->
+<div class="category-section" id="sec-homecare">
+  <div class="container">
+    <button class="back-link" onclick="showCatGrid()">&#8592; Volver a categorias</button>
+    <h2>Cuido en el Hogar</h2>
+    <p class="section-desc">Servicios de enfermeria a domicilio, amas de llaves, cuidadoras y asistencia personalizada en el hogar.</p>
+    <div class="resource-grid">
+      <div class="resource-card" data-muni="toda la isla" data-cat="homecare">
+        <span class="tag tag-ocean">Toda la Isla</span>
+        <h4>CareGivers de Puerto Rico</h4>
+        <p class="resource-desc">Cuido 24/7 en hogares y hospitales. Corto y largo plazo. Comida, higiene personal, quehaceres.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877262272">(787) 726-2272</a></span>
+          <span class="web"><a href="http://caregiverspr.com" target="_blank" rel="noopener">caregiverspr.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="homecare">
+        <span class="tag tag-ocean">Toda la Isla</span>
+        <h4>Empresas Condado — Home Care</h4>
+        <p class="resource-desc">40+ anos. Certificados Depto. Salud, CMS y Joint Commission. Enfermeras, terapistas fisicos, patologos del habla.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://empresascondado.com/home-care/" target="_blank" rel="noopener">empresascondado.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="homecare">
+        <span class="tag tag-ocean">Toda la Isla</span>
+        <h4>Priority Care Services</h4>
+        <p class="resource-desc">Profesionales certificados, 9+ anos experiencia. Servicios personalizados en hogares y hospitales.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.prioritycareservicespr.com" target="_blank" rel="noopener">prioritycareservicespr.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="homecare">
+        <span class="tag tag-ocean">Toda la Isla</span>
+        <h4>Care Helpers — Amas de Llaves</h4>
+        <p class="resource-desc">Cuidadoras a domicilio: limpieza basica, preparacion de comidas, compania y bienestar.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.carehelpers.com" target="_blank" rel="noopener">carehelpers.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="guaynabo" data-cat="homecare">
+        <span class="tag tag-sage">Guaynabo</span>
+        <h4>Home Instead</h4>
+        <p class="resource-desc">Cuidadores desde acompanante hasta asistente de tiempo completo. Empresa internacional.</p>
+        <div class="resource-contact">
+          <address class="address">Guaynabo, PR</address>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="homecare">
+        <span class="tag tag-ocean">Varias Localidades</span>
+        <h4>San Lucas Episcopal — Hospicio y Home Care</h4>
+        <p class="resource-desc">Enfermeria, patologia del habla, terapia fisica y ocupacional a domicilio. Condiciones cronicas y terminales.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.sanlucaspr.org/hospicio-y-home-care/" target="_blank" rel="noopener">sanlucaspr.org</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="quebradillas" data-cat="homecare">
+        <span class="tag tag-sage">Quebradillas</span>
+        <h4>Puerto Rico Home Health</h4>
+        <p class="resource-desc">Enfermeria, nutricion, farmacia, servicios sociales, terapia ocupacional y del habla, equipo medico.</p>
+        <div class="resource-contact">
+          <address class="address">125 Calle Rafols, Quebradillas PR 00678</address>
+          <span class="web"><a href="https://www.puertoricohomehealth.com" target="_blank" rel="noopener">puertoricohomehealth.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="homecare">
+        <span class="tag tag-sage">Gobierno</span>
+        <h4>COSALL — Amas de Llaves</h4>
+        <p class="resource-desc">Acompanantes: preparacion de alimentos, actividades diarias, vigilancia de salud. Auxiliares de salud y quehaceres del hogar.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877216121">(787) 721-6121</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="ponce" data-cat="homecare">
+        <span class="tag tag-sage">Ponce</span>
+        <h4>Home Care Damas — Salud en el Hogar</h4>
+        <p class="resource-desc">Servicios de salud en el hogar del Hospital Damas en Ponce.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.hospitaldamas.com/damasservicios/home-care-damas-salud-en-el-hogar" target="_blank" rel="noopener">hospitaldamas.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="homecare">
+        <span class="tag tag-gold">179 Proveedores</span>
+        <h4>Directorio de Home Health — NPI Profile</h4>
+        <p class="resource-desc">179 proveedores de home health registrados en Puerto Rico. Busqueda por area.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://npiprofile.com/taxonomy/code/251E00000X/state/pr" target="_blank" rel="noopener">npiprofile.com (PR)</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOGARES -->
+<div class="category-section" id="sec-hogares">
+  <div class="container">
+    <button class="back-link" onclick="showCatGrid()">&#8592; Volver a categorias</button>
+    <h2>Hogares de Envejecientes</h2>
+    <p class="section-desc">Directorios completos de hogares de cuido a largo plazo por municipio. Visite los enlaces para ver listados con telefonos y direcciones.</p>
+    <div class="resource-grid">
+      <div class="resource-card" data-muni="toda la isla" data-cat="hogares" style="border-left: 4px solid var(--ocean);">
+        <span class="tag tag-ocean">78 Municipios</span>
+        <h4>HogaresDeEnvejecientes.com</h4>
+        <p class="resource-desc">Directorio gratuito y completo de hogares en los 78 municipios de Puerto Rico. Organizado por zona con direcciones y telefonos.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://hogaresdeenvejecientes.com" target="_blank" rel="noopener">hogaresdeenvejecientes.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="hogares" style="border-left: 4px solid var(--ocean);">
+        <span class="tag tag-ocean">Comparativo</span>
+        <h4>Insignia Senior Living — Listado</h4>
+        <p class="resource-desc">Listado comparativo de hogares certificados en Puerto Rico con informacion detallada de servicios.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.insigniaseniorliving.com/puerto-rico-esp/" target="_blank" rel="noopener">insigniaseniorliving.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="hogares" style="border-left: 4px solid var(--sage);">
+        <span class="tag tag-sage">Gobierno</span>
+        <h4>Registro Oficial de Centros Licenciados</h4>
+        <p class="resource-desc">Registro de Centros Licenciados y Certificados para Adultos Mayores del Depto. de la Familia. Actualizado mensualmente.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://docs.pr.gov/files/Familia/Licenciamiento/Reg%20de%20Centros%20Lic%20y%20Certificados%20para%20Adultos%20Mayores%20y%20Adultos%20con%20Imp-ABR2024.pdf" target="_blank" rel="noopener">Descargar PDF Oficial</a></span>
+        </div>
+      </div>
+    </div>
+    <h3 style="margin: 32px 0 16px; font-size: 20px;">Hogares por Municipio — Ejemplos</h3>
+    <div class="resource-grid">
+      <div class="resource-card" data-muni="guaynabo" data-cat="hogares">
+        <span class="tag tag-sage">Guaynabo</span>
+        <h4>Hogares en Guaynabo (5+)</h4>
+        <p class="resource-desc">Urb. Gardenville (787-385-2202) &middot; Carr. 169 Km 7.2 (787-720-2330) &middot; Ave. Alejandrino (787-272-8808) &middot; Calle Union #8 (787-720-5901) &middot; Quintas Beverly Hills (787-749-2727)</p>
+      </div>
+      <div class="resource-card" data-muni="san juan" data-cat="hogares">
+        <span class="tag tag-sage">San Juan</span>
+        <h4>Hogares en San Juan (10+)</h4>
+        <p class="resource-desc">Julian Bengochea, San Martin (787-319-5479) &middot; Ave. Ponce De Leon 1715 (787-268-6530) &middot; <a href="https://hogaresdeenvejecientes.com/san-juan/" target="_blank" rel="noopener">Ver listado completo</a></p>
+      </div>
+      <div class="resource-card" data-muni="ponce" data-cat="hogares">
+        <span class="tag tag-sage">Ponce</span>
+        <h4>Hogares en Ponce (5+)</h4>
+        <p class="resource-desc">Bo. Real Anon (787-317-6671) &middot; Bo. Sabaneta (787-813-5738) &middot; Ave. Munoz Rivera 1206 (787-843-2364) &middot; <a href="https://hogaresdeenvejecientes.com/ponce/" target="_blank" rel="noopener">Ver listado completo</a></p>
+      </div>
+      <div class="resource-card" data-muni="mayaguez" data-cat="hogares">
+        <span class="tag tag-sage">Mayaguez</span>
+        <h4>Hogares en Mayaguez (6+)</h4>
+        <p class="resource-desc">Bo. Sabanetas (787-680-2171) &middot; Urb. San Jose Duarte (787-476-0297) &middot; Bo. Miradero (787-833-5997) &middot; <a href="https://hogaresdeenvejecientes.com/mayaguez/" target="_blank" rel="noopener">Ver listado completo</a></p>
+      </div>
+      <div class="resource-card" data-muni="aguadilla" data-cat="hogares">
+        <span class="tag tag-sage">Aguadilla</span>
+        <h4>Hogares en Aguadilla (4+)</h4>
+        <p class="resource-desc">Base Ramey (787-658-6393) &middot; Calle Robles (787-317-4524) &middot; Ave. Ramey 1615 (787-890-2871) &middot; Hogar Betzaida (787-882-9004)</p>
+      </div>
+      <div class="resource-card" data-muni="toa baja" data-cat="hogares">
+        <span class="tag tag-sage">Toa Baja</span>
+        <h4>Hogares en Toa Baja (7+)</h4>
+        <p class="resource-desc">(787) 633-3779 &middot; (787) 415-5700 &middot; (787) 784-1717 &middot; (787) 667-3501 &middot; <a href="https://hogaresdeenvejecientes.com/toa-baja/" target="_blank" rel="noopener">Ver listado completo</a></p>
+      </div>
+      <div class="resource-card" data-muni="trujillo alto" data-cat="hogares">
+        <span class="tag tag-sage">Trujillo Alto</span>
+        <h4>Hogares en Trujillo Alto (3+)</h4>
+        <p class="resource-desc">Bo. Carraizo (787-209-9969) &middot; Bo. Las Cuevas (787-283-6070) &middot; Bo. La Gloria (787-295-6169)</p>
+      </div>
+      <div class="resource-card" data-muni="bayamon" data-cat="hogares">
+        <span class="tag tag-sage">Bayamon</span>
+        <h4>Hogar Casa Feliz — Bayamon</h4>
+        <p class="resource-desc">Hogar de envejecientes con servicios de cuido residencial.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.hogarcasafeliz.com" target="_blank" rel="noopener">hogarcasafeliz.com</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SALUD -->
+<div class="category-section" id="sec-salud">
+  <div class="container">
+    <button class="back-link" onclick="showCatGrid()">&#8592; Volver a categorias</button>
+    <h2>Salud y Rehabilitacion</h2>
+    <p class="section-desc">Salud mental, rehabilitacion fisica, hospicio, cuidados paliativos, telemedicina, farmacias y equipo medico.</p>
+    <div class="resource-grid">
+      <div class="resource-card" data-muni="toda la isla" data-cat="salud">
+        <span class="tag tag-plum">Salud Mental</span>
+        <h4>ASSMCA — Salud Mental y Adiccion</h4>
+        <p class="resource-desc">Programas de tratamiento, emergencias psiquiatricas y servicios de salud mental del gobierno.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.assmca.pr.gov" target="_blank" rel="noopener">assmca.pr.gov</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="salud">
+        <span class="tag tag-plum">24/7 Gratis</span>
+        <h4>Linea PAS — Crisis de Salud Mental</h4>
+        <p class="resource-desc">Linea para personas con ansiedad, preocupacion o sintomas emocionales. Libre de costo, 24/7.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:988">9-8-8</a> / <a href="tel:18009810023">1-800-981-0023</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="san juan" data-cat="salud">
+        <span class="tag tag-plum">Salud Mental</span>
+        <h4>Hospital San Juan Capestrano</h4>
+        <p class="resource-desc">Tratamiento de salud conductual: depresion, ansiedad, trastorno bipolar. Hospitalizacion parcial para adultos.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.sanjuancapestrano.com" target="_blank" rel="noopener">sanjuancapestrano.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="salud">
+        <span class="tag tag-coral">37 Agencias</span>
+        <h4>Hospicios y Cuidados Paliativos</h4>
+        <p class="resource-desc">37 agencias certificadas por Medicare en Puerto Rico. Cuido al final de la vida con equipo interdisciplinario.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7873098246">(787) 309-8246</a> (Asociacion)</span>
+          <span class="web"><a href="https://www.prhpca.com" target="_blank" rel="noopener">prhpca.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="ponce" data-cat="salud">
+        <span class="tag tag-sage">Ponce</span>
+        <h4>Hospicio La Providencia</h4>
+        <p class="resource-desc">Primera agencia de hospicios certificada por Medicare en todo Puerto Rico (1985).</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://hospiciolaprovidenciapr.com" target="_blank" rel="noopener">hospiciolaprovidenciapr.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="salud">
+        <span class="tag tag-ocean">Telemedicina</span>
+        <h4>Programa TAM — Telemedicina Adultos Mayores</h4>
+        <p class="resource-desc">Servicios de telemedicina en 200 hogares de adultos mayores. Consultas virtuales con equipo TytoClinic sin salir del hogar.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://prsciencetrust.org/telemedicina-adultosmayores/" target="_blank" rel="noopener">PR Science Trust — TAM</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="salud">
+        <span class="tag tag-ocean">Rehabilitacion</span>
+        <h4>Multy Medical — Hospital de Rehabilitacion</h4>
+        <p class="resource-desc">Primer hospital de rehabilitacion independiente en PR. Condiciones medicas y quirurgicas criticas.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://multymedicalrehabilitationhospital.com" target="_blank" rel="noopener">multymedicalrehabilitationhospital.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="san juan" data-cat="salud">
+        <span class="tag tag-ocean">Rehabilitacion</span>
+        <h4>Hospital UPR — Medicina Fisica y Rehabilitacion</h4>
+        <p class="resource-desc">Fisiatras, terapistas fisicos. Coordinacion con ortopedia, neurologia y neurocirugia.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.hospitalupr.org/servicios/servicios-geriatricos/" target="_blank" rel="noopener">hospitalupr.org</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="salud">
+        <span class="tag tag-ocean">Rehabilitacion</span>
+        <h4>CANII — Centro Adultos y Ninos con Impedimentos</h4>
+        <p class="resource-desc">Centro de rehabilitacion mas completo de PR. Desarrollo de capacidades maximas.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.caniipr.org" target="_blank" rel="noopener">caniipr.org</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="salud">
+        <span class="tag tag-gold">Equipo Medico</span>
+        <h4>AxisCare — Equipo Medico Duradero</h4>
+        <p class="resource-desc">Sillas de ruedas, modificaciones, suplidos diabeticos, oxigeno, medicamentos. Medicare, Plan Vital y seguros comerciales.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.axcare.com" target="_blank" rel="noopener">axcare.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="salud">
+        <span class="tag tag-gold">Farmacia</span>
+        <h4>Axium Healthcare de Puerto Rico</h4>
+        <p class="resource-desc">Farmacia especializada con entrega a domicilio. Acepta Plan Vital, Medicare Advantage y planes comerciales.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.axiumpr.com" target="_blank" rel="noopener">axiumpr.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="caguas" data-cat="salud">
+        <span class="tag tag-gold">Farmacia</span>
+        <h4>SPS Pharmacy — Caguas</h4>
+        <p class="resource-desc">Mayor inventario de medicinas, entrega a todo PR. Centro de composicion para recetas personalizadas.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.spscaguas.com" target="_blank" rel="noopener">spscaguas.com</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- APOYO -->
+<div class="category-section" id="sec-apoyo">
+  <div class="container">
+    <button class="back-link" onclick="showCatGrid()">&#8592; Volver a categorias</button>
+    <h2>Grupos de Apoyo</h2>
+    <p class="section-desc">Grupos de apoyo emocional, talleres educativos y comunidades para cuidadores y familias.</p>
+    <div class="resource-grid">
+      <div class="resource-card" data-muni="toda la isla" data-cat="apoyo">
+        <span class="tag tag-plum">30+ Grupos</span>
+        <h4>Grupos de Apoyo — Asociacion Alzheimer PR</h4>
+        <p class="resource-desc">Mas de 30 grupos en toda la isla para personas con Alzheimer, demencia y sus cuidadores familiares.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7872686818">(787) 268-6818</a></span>
+          <span class="web"><a href="https://alzheimerpr.com/grupos-de-apoyo" target="_blank" rel="noopener">Ver ubicaciones</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="ponce" data-cat="apoyo">
+        <span class="tag tag-sage">Ponce</span>
+        <h4>Grupo de Apoyo Cuidadores — Ponce</h4>
+        <p class="resource-desc">Grupo para cuidadores de pacientes con Alzheimer en la region sur.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7878411180">(787) 841-1180</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="apoyo">
+        <span class="tag tag-ocean">Directorio</span>
+        <h4>ERAS Puerto Rico — Organizaciones de Apoyo</h4>
+        <p class="resource-desc">Directorio de organizaciones de apoyo para adultos mayores y familias.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.eraspr.org/en/organiaciones-de-apoyo" target="_blank" rel="noopener">eraspr.org</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="apoyo">
+        <span class="tag tag-sage">Voluntariado</span>
+        <h4>Red de Voluntariado de Puerto Rico</h4>
+        <p class="resource-desc">Promueve el servicio voluntario. Conecta voluntarios con organizaciones que sirven a adultos mayores.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.voluntariospuertorico.com" target="_blank" rel="noopener">voluntariospuertorico.com</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LEGAL -->
+<div class="category-section" id="sec-legal">
+  <div class="container">
+    <button class="back-link" onclick="showCatGrid()">&#8592; Volver a categorias</button>
+    <h2>Ayuda Legal y Beneficios</h2>
+    <p class="section-desc">Servicios legales gratuitos, Seguro Social, Medicare, Plan Vital y otros beneficios gubernamentales.</p>
+    <div class="resource-grid">
+      <div class="resource-card" data-muni="toda la isla" data-cat="legal">
+        <span class="tag tag-gold">Legal Gratis</span>
+        <h4>Servicios Legales de Puerto Rico</h4>
+        <p class="resource-desc">Representacion legal gratuita en tutela, proteccion de adultos mayores, maltrato, explotacion financiera, poder legal.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.servicioslegales.org" target="_blank" rel="noopener">servicioslegales.org</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="legal">
+        <span class="tag tag-gold">Legal Gratis</span>
+        <h4>Pro Bono, Inc.</h4>
+        <p class="resource-desc">Fundada en 1981 por el Colegio de Abogados. Prioridad a casos de personas de edad avanzada. Servicios gratuitos.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://ayudalegalpr.org" target="_blank" rel="noopener">ayudalegalpr.org</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="legal">
+        <span class="tag tag-sage">Gobierno</span>
+        <h4>Seguro Social — Oficinas en PR</h4>
+        <p class="resource-desc">Beneficios de retiro (desde 62 anos), discapacidad y sobrevivientes. Oficinas en San Juan, Ponce, Mayaguez, Humacao y Arecibo.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:18007721213">1-800-772-1213</a></span>
+          <span class="web"><a href="https://www.ssa.gov" target="_blank" rel="noopener">ssa.gov</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="legal">
+        <span class="tag tag-sage">Gobierno</span>
+        <h4>Medicare y Plan Vital (Medicaid)</h4>
+        <p class="resource-desc">Medicare para 65+, Plan Vital para bajos ingresos. Cobertura Platino para duals (Medicare + Medicaid). 300,000+ beneficiarios.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.medicaid.pr.gov" target="_blank" rel="noopener">medicaid.pr.gov</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="legal">
+        <span class="tag tag-gold">Credito</span>
+        <h4>Credito Contributivo — 65+ anos</h4>
+        <p class="resource-desc">Credito de $400 para personas de 65 anos o mas que cumplan requisitos de ingresos. Planilla disponible en julio.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://hacienda.pr.gov/publicaciones/folleto-informativo-credito-para-personas-de-65-anos-o-mas-y-credito-compensatorio-para-pensionados-de-bajos-recursos" target="_blank" rel="noopener">Hacienda — Info</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="legal">
+        <span class="tag tag-sage">Leyes</span>
+        <h4>Ley 121-2019 — Carta de Derechos Adultos Mayores</h4>
+        <p class="resource-desc">Carta de Derechos de personas de 60+ anos: representacion legal gratuita, derecho a decidir sobre tutela y propiedades.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://poderjudicial.pr/educacion-a-la-comunidad/informacion-sobres-temas-legales/problematicas-sociales-comunes/persona-adulta-mayor/" target="_blank" rel="noopener">Poder Judicial</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRANSPORTE -->
+<div class="category-section" id="sec-transporte">
+  <div class="container">
+    <button class="back-link" onclick="showCatGrid()">&#8592; Volver a categorias</button>
+    <h2>Transporte y Nutricion</h2>
+    <p class="section-desc">Transporte medico, paratransito y programas de alimentacion para adultos mayores.</p>
+    <div class="resource-grid">
+      <div class="resource-card" data-muni="toda la isla" data-cat="transporte">
+        <span class="tag tag-ocean">Gratis</span>
+        <h4>Programa SENDA — Transporte Gratuito</h4>
+        <p class="resource-desc">Transporte gratuito para personas 60+ anos y familiares a servicios de salud, sociales y recreativos. Areas rurales.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877216121">(787) 721-6121</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="transporte">
+        <span class="tag tag-ocean">Toda la Isla</span>
+        <h4>TransCita — Transporte Medico</h4>
+        <p class="resource-desc">Transporte para 60+ anos a citas medicas, tratamientos, laboratorios y hospitales. Vehiculos con rampa. Conductores son paramedicos.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://transcita.com" target="_blank" rel="noopener">transcita.com</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="area metro" data-cat="transporte">
+        <span class="tag tag-sage">Area Metro</span>
+        <h4>AMA Llame y Viaje — Paratransito</h4>
+        <p class="resource-desc">Servicio complementario de transporte para personas con diversidad funcional que no pueden usar rutas fijas. Requiere certificacion.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.ati.pr.gov" target="_blank" rel="noopener">ati.pr.gov</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="san juan" data-cat="transporte">
+        <span class="tag tag-gold">Nutricion</span>
+        <h4>Meals on Wheels — San Juan</h4>
+        <p class="resource-desc">Programa de entrega de comidas a domicilio para personas mayores.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877928808">(787) 792-8808</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="transporte">
+        <span class="tag tag-gold">Nutricion</span>
+        <h4>PAN — Programa de Asistencia Nutricional</h4>
+        <p class="resource-desc">Asistencia alimentaria para 300,000+ adultos mayores. Beneficios mensuales basicos para personas de bajos ingresos.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.familia.pr.gov" target="_blank" rel="noopener">familia.pr.gov</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EMERGENCIAS -->
+<div class="category-section" id="sec-emergencias">
+  <div class="container">
+    <button class="back-link" onclick="showCatGrid()">&#8592; Volver a categorias</button>
+    <h2>Emergencias y Proteccion</h2>
+    <p class="section-desc">Lineas de emergencia, proteccion contra maltrato y recursos de intervencion de crisis.</p>
+    <div class="emergency-box">
+      <h3>Numeros de Emergencia — Disponibles 24/7</h3>
+      <div class="emergency-grid">
+        <div class="emergency-item">
+          <span class="emergency-label">Emergencias</span>
+          <span class="emergency-number"><a href="tel:911">911</a></span>
+        </div>
+        <div class="emergency-item">
+          <span class="emergency-label">Maltrato Adultos Mayores</span>
+          <span class="emergency-number"><a href="tel:18009818333">1-800-981-8333</a></span>
+        </div>
+        <div class="emergency-item">
+          <span class="emergency-label">Maltrato (Metro)</span>
+          <span class="emergency-number"><a href="tel:7877491333">(787) 749-1333</a></span>
+        </div>
+        <div class="emergency-item">
+          <span class="emergency-label">Salud Mental / Crisis</span>
+          <span class="emergency-number"><a href="tel:988">9-8-8</a></span>
+        </div>
+        <div class="emergency-item">
+          <span class="emergency-label">Apoyo Familiar</span>
+          <span class="emergency-number"><a href="tel:18883597777">1-888-359-7777</a></span>
+        </div>
+        <div class="emergency-item">
+          <span class="emergency-label">Info y Referidos</span>
+          <span class="emergency-number"><a href="tel:211">2-1-1</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card" data-muni="toda la isla" data-cat="emergencias">
+        <span class="tag tag-coral">24/7</span>
+        <h4>Linea de Maltrato — Depto. de la Familia</h4>
+        <p class="resource-desc">Informes de maltrato, violencia domestica, abandono de personas de edad avanzada. Llamadas confidenciales.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:18009818333">1-800-981-8333</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="emergencias">
+        <span class="tag tag-coral">7 dias</span>
+        <h4>Linea de Orientacion y Apoyo Familiar</h4>
+        <p class="resource-desc">Orientacion durante crisis. 8:00 AM - 10:00 PM, 7 dias.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7879778022">(787) 977-8022</a> / <a href="tel:18883597777">1-888-359-7777</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="emergencias">
+        <span class="tag tag-gold">Legal</span>
+        <h4>Ordenes de Proteccion — Poder Judicial</h4>
+        <p class="resource-desc">Ordenes de proteccion y recursos judiciales para personas adultas mayores.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://poderjudicial.pr/educacion-a-la-comunidad/informacion-sobres-temas-legales/problematicas-sociales-comunes/persona-adulta-mayor/" target="_blank" rel="noopener">poderjudicial.pr</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ MUNICIPIO VIEW ═══════════════ -->
+<div class="municipio-view" id="municipioView">
+  <div class="container">
+    <h2 style="font-size:24px;margin-bottom:6px;">Buscar por Municipio</h2>
+    <p style="color:var(--text-mid);margin-bottom:20px;font-size:15px;">Selecciona tu municipio para ver los recursos disponibles en tu area.</p>
+    <div class="municipio-search-wrap">
+      <svg class="search-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="muniSearch" placeholder="Buscar municipio..." aria-label="Buscar municipio">
+    </div>
+    <div class="municipio-grid" id="muniGrid"></div>
+  </div>
+</div>
+
+<!-- Municipio Detail View -->
+<div class="municipio-detail" id="muniDetail">
+  <div class="container">
+    <button class="back-link" onclick="showMuniGrid()">&#8592; Volver a municipios</button>
+    <h2 id="muniDetailTitle" style="font-size:26px;margin-bottom:6px;color:var(--ocean);"></h2>
+    <p style="color:var(--text-mid);margin-bottom:24px;font-size:15px;">Recursos disponibles en este municipio y recursos de toda la isla.</p>
+    <div class="resource-grid" id="muniDetailGrid"></div>
+  </div>
+</div>
+
+<!-- Disclaimer -->
+<section style="padding: 0 0 40px;">
+  <div class="container">
+    <div class="disclaimer">
+      <strong>Aviso Importante:</strong> CuidaPR.org es un sitio web informativo independiente. <strong>No estamos asociados a ninguna empresa privada ni entidad gubernamental.</strong> Nuestro proposito es ayudar a los puertorriquenos a encontrar recursos de manera centralizada, accesible y gratuita. La informacion se recopila de fuentes publicas y se actualiza periodicamente. Recomendamos verificar directamente con cada organizacion para confirmar disponibilidad, horarios y requisitos. Si encuentra informacion incorrecta o desea sugerir un recurso, contactenos.
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <strong>CuidaPR.org</strong><br>
+    Un directorio gratuito para cuidadores, adultos mayores y familias en Puerto Rico.<br>
+    <span style="opacity:0.5;font-size:13px;">Sitio informativo independiente. No afiliado a entidades gubernamentales ni comerciales.</span><br>
+    <span style="opacity:0.4;font-size:12px;margin-top:6px;display:inline-block;">&copy; 2026 CuidaPR.org — Hecho con amor para Puerto Rico</span>
+  </div>
+</footer>
+
+<script>
+const municipios = [
+  "Adjuntas","Aguada","Aguadilla","Aguas Buenas","Aibonito","Anasco","Arecibo","Arroyo",
+  "Barceloneta","Barranquitas","Bayamon","Cabo Rojo","Caguas","Camuy","Canovanas","Carolina",
+  "Catano","Cayey","Ceiba","Ciales","Cidra","Coamo","Comerio","Corozal","Culebra",
+  "Dorado","Fajardo","Florida","Guanica","Guayama","Guayanilla","Guaynabo","Gurabo",
+  "Hatillo","Hormigueros","Humacao","Isabela","Jayuya","Juana Diaz","Juncos","Lajas",
+  "Lares","Las Marias","Las Piedras","Loiza","Luquillo","Manati","Maricao","Maunabo",
+  "Mayaguez","Moca","Morovis","Naguabo","Naranjito","Orocovis","Patillas","Penuelas",
+  "Ponce","Quebradillas","Rincon","Rio Grande","Sabana Grande","Salinas","San German",
+  "San Juan","San Lorenzo","San Sebastian","Santa Isabel","Toa Alta","Toa Baja",
+  "Trujillo Alto","Utuado","Vega Alta","Vega Baja","Vieques","Villalba","Yabucoa","Yauco"
+];
+
+// Build municipio grid
+const muniGridEl = document.getElementById('muniGrid');
+municipios.forEach(m => {
+  const btn = document.createElement('button');
+  btn.className = 'municipio-btn';
+  btn.textContent = m;
+  btn.onclick = () => showMuniDetail(m);
+  btn.dataset.name = m.toLowerCase();
+  muniGridEl.appendChild(btn);
+});
+
+// Municipio search filter
+document.getElementById('muniSearch').addEventListener('input', function() {
+  const q = this.value.toLowerCase();
+  muniGridEl.querySelectorAll('.municipio-btn').forEach(btn => {
+    btn.classList.toggle('hidden', q.length > 0 && !btn.dataset.name.includes(q));
+  });
+});
+
+function showView(view) {
+  document.getElementById('categoryView').style.display = view === 'categoria' ? 'block' : 'none';
+  document.getElementById('municipioView').classList.toggle('visible', view === 'municipio');
+  document.getElementById('btnCat').classList.toggle('active', view === 'categoria');
+  document.getElementById('btnMuni').classList.toggle('active', view === 'municipio');
+  // Hide detail views
+  document.querySelectorAll('.category-section').forEach(s => s.classList.remove('visible'));
+  document.getElementById('muniDetail').classList.remove('visible');
+  document.getElementById('catGrid').classList.remove('hidden');
+}
+
+function showCategory(cat) {
+  document.getElementById('categoryView').style.display = 'block';
+  document.getElementById('municipioView').classList.remove('visible');
+  document.getElementById('muniDetail').classList.remove('visible');
+  document.getElementById('catGrid').classList.add('hidden');
+  document.querySelectorAll('.category-section').forEach(s => s.classList.remove('visible'));
+  var sec = document.getElementById('sec-' + cat);
+  sec.classList.add('visible');
+  setTimeout(function() {
+    window.scrollTo({ top: sec.offsetTop - 60, behavior: 'smooth' });
+  }, 50);
+}
+
+function showCatGrid() {
+  document.querySelectorAll('.category-section').forEach(s => s.classList.remove('visible'));
+  document.getElementById('catGrid').classList.remove('hidden');
+  window.scrollTo({ top: document.getElementById('catGrid').offsetTop - 80, behavior: 'smooth' });
+}
+
+function showMuniDetail(muni) {
+  const grid = document.getElementById('muniDetailGrid');
+  grid.innerHTML = '';
+  document.getElementById('muniDetailTitle').textContent = muni;
+  document.getElementById('municipioView').classList.remove('visible');
+  document.getElementById('muniDetail').classList.add('visible');
+
+  const muniLower = muni.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  const allCards = document.querySelectorAll('.resource-card');
+  let found = 0;
+
+  allCards.forEach(card => {
+    const cardMuni = (card.dataset.muni || '').toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    const cardText = card.textContent.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    if (cardMuni.includes(muniLower) || cardMuni === 'toda la isla' || cardText.includes(muniLower)) {
+      const clone = card.cloneNode(true);
+      grid.appendChild(clone);
+      found++;
+    }
+  });
+
+  if (found === 0) {
+    grid.innerHTML = '<div style="grid-column:1/-1;padding:40px 20px;text-align:center;color:var(--text-mid);">' +
+      '<p style="font-size:18px;margin-bottom:12px;">No encontramos recursos especificos para <strong>' + muni + '</strong> en nuestra base de datos.</p>' +
+      '<p>Te recomendamos:</p>' +
+      '<p style="margin-top:8px;"><strong>1.</strong> Llamar al <a href="tel:211" style="font-weight:700;">2-1-1</a> para informacion y referidos</p>' +
+      '<p><strong>2.</strong> Visitar <a href="https://www.migentegrande.com/llama-a-tu-municipio-para-ayuda-al-adulto-mayor/" target="_blank" rel="noopener" style="font-weight:700;">Mi Gente Grande</a> para el telefono de tu municipio</p>' +
+      '<p><strong>3.</strong> Contactar la <a href="https://www.oppea.pr.gov" target="_blank" rel="noopener" style="font-weight:700;">OPPEA</a> al (787) 721-6121</p>' +
+      '</div>';
+  }
+  window.scrollTo({ top: document.getElementById('muniDetail').offsetTop - 60, behavior: 'smooth' });
+}
+
+function showMuniGrid() {
+  document.getElementById('muniDetail').classList.remove('visible');
+  document.getElementById('municipioView').classList.add('visible');
+  window.scrollTo({ top: document.getElementById('municipioView').offsetTop - 60, behavior: 'smooth' });
+}
+
+// Global search
+var searchActive = false;
+document.getElementById('globalSearch').addEventListener('input', function() {
+  var q = this.value.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+
+  if (q.length < 2) {
+    if (searchActive) {
+      searchActive = false;
+      document.querySelectorAll('.category-section').forEach(function(s) { s.classList.remove('visible'); });
+      document.querySelectorAll('.resource-card').forEach(function(c) { c.classList.remove('hidden'); });
+      document.querySelectorAll('.back-link').forEach(function(b) { b.style.display = ''; });
+      document.getElementById('catGrid').classList.remove('hidden');
+    }
+    return;
+  }
+
+  searchActive = true;
+  document.getElementById('categoryView').style.display = 'block';
+  document.getElementById('municipioView').classList.remove('visible');
+  document.getElementById('muniDetail').classList.remove('visible');
+  document.getElementById('catGrid').classList.add('hidden');
+
+  document.querySelectorAll('.category-section').forEach(function(s) {
+    s.classList.add('visible');
+    s.querySelectorAll('.back-link').forEach(function(b) { b.style.display = 'none'; });
+  });
+
+  var anyVisible = {};
+  document.querySelectorAll('.resource-card').forEach(function(card) {
+    var text = card.textContent.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    var data = ((card.dataset.muni || '') + ' ' + (card.dataset.cat || '')).toLowerCase();
+    var match = text.includes(q) || data.includes(q);
+    card.classList.toggle('hidden', !match);
+    if (match) {
+      var sec = card.closest('.category-section');
+      if (sec) anyVisible[sec.id] = true;
+    }
+  });
+
+  document.querySelectorAll('.category-section').forEach(function(s) {
+    if (!anyVisible[s.id]) s.classList.remove('visible');
+  });
+});
+</script>
