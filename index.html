@@ -1804,11 +1804,12 @@ document.getElementById('globalSearch').addEventListener('input', function() {
   });
 });
 
-// Font size toggle
+// Font size toggle (uses zoom for universal scaling)
 var fontLevel = 0;
 function changeFontSize(dir) {
   fontLevel = Math.max(-2, Math.min(4, fontLevel + dir));
-  document.body.style.fontSize = (17 + fontLevel * 2) + 'px';
+  var scale = 1 + (fontLevel * 0.1);
+  document.documentElement.style.zoom = scale;
 }
 
 // WhatsApp share buttons on every card
