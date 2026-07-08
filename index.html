@@ -401,6 +401,22 @@ a:focus-visible { outline: 2px solid var(--ocean); outline-offset: 3px; border-r
 
 [id] { scroll-margin-top: 70px; }
 .hidden { display: none !important; }
+
+.font-btn {
+  background: var(--bg-alt); border: 1px solid var(--border); color: var(--text);
+  border-radius: 6px; padding: 4px 10px; font-size: 14px; font-weight: 700;
+  cursor: pointer; transition: var(--transition);
+}
+.font-btn:hover { background: var(--ocean-soft); border-color: var(--ocean); }
+
+.wa-share {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #25D366; color: #fff; border: none; border-radius: 6px;
+  padding: 5px 10px; font-size: 13px; font-weight: 700; cursor: pointer;
+  margin-top: 6px; transition: var(--transition);
+}
+.wa-share:hover { background: #1DA851; }
+.wa-share svg { flex-shrink: 0; }
 </style>
 
 <!-- Emergency Strip -->
@@ -421,7 +437,8 @@ a:focus-visible { outline: 2px solid var(--ocean); outline-offset: 3px; border-r
       CuidaPR<span style="font-weight:400;opacity:0.45">.org</span>
     </div>
     <div class="header-actions">
-      <span style="font-size:13px;color:var(--text-light)">Directorio gratuito de servicios</span>
+      <button class="font-btn" onclick="changeFontSize(-1)" aria-label="Reducir texto">A-</button>
+      <button class="font-btn" onclick="changeFontSize(1)" aria-label="Aumentar texto">A+</button>
     </div>
   </div>
 </header>
@@ -538,6 +555,27 @@ a:focus-visible { outline: 2px solid var(--ocean); outline-offset: 3px; border-r
         <h3>Transporte y Nutricion</h3>
         <p>Transporte medico, paratransito, programas de alimentacion y asistencia nutricional.</p>
         <span class="cat-count">6+ servicios</span>
+      </div>
+
+      <div class="cat-card" onclick="showCategory('veteranos')" tabindex="0" role="button">
+        <div class="cat-icon" style="background:var(--sage-soft)">&#x1F3C5;</div>
+        <h3>Veteranos</h3>
+        <p>Beneficios del VA, salud, exenciones contributivas y programas de apoyo para veteranos.</p>
+        <span class="cat-count">8+ recursos</span>
+      </div>
+
+      <div class="cat-card" onclick="showCategory('finanzas')" tabindex="0" role="button">
+        <div class="cat-icon" style="background:var(--gold-soft)">&#x1F4B0;</div>
+        <h3>Asistencia Financiera</h3>
+        <p>Ayuda con utilidades, equipos medicos, programas de vivienda y beneficios economicos.</p>
+        <span class="cat-count">6+ programas</span>
+      </div>
+
+      <div class="cat-card" onclick="showCategory('prevencion')" tabindex="0" role="button">
+        <div class="cat-icon" style="background:var(--ocean-soft)">&#x1F6E1;</div>
+        <h3>Prevencion y Seguridad</h3>
+        <p>Prevencion de caidas, fraude, modificaciones al hogar y seguridad para adultos mayores.</p>
+        <span class="cat-count">6+ recursos</span>
       </div>
 
       <div class="cat-card" onclick="showCategory('emergencias')" tabindex="0" role="button">
@@ -1357,6 +1395,213 @@ a:focus-visible { outline: 2px solid var(--ocean); outline-offset: 3px; border-r
   </div>
 </div>
 
+<!-- VETERANOS -->
+<div class="category-section" id="sec-veteranos">
+  <div class="container">
+    <button class="back-link" onclick="showCatGrid()">&#8592; Volver a categorias</button>
+    <h2>Veteranos</h2>
+    <p class="section-desc">Beneficios, servicios de salud y programas de apoyo para veteranos y sus familias en Puerto Rico.</p>
+    <div class="resource-grid">
+      <div class="resource-card" data-muni="san juan" data-cat="veteranos">
+        <span class="tag tag-sage">VA</span>
+        <h4>VA Caribbean Healthcare System</h4>
+        <p class="resource-desc">Hospital de Veteranos con servicios de medicina primaria, salud mental, geriatria, rehabilitacion, farmacia y cuidados a largo plazo.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7876417582">(787) 641-7582</a></span>
+          <address class="address">10 Casia St., San Juan PR 00921</address>
+          <span class="web"><a href="https://www.va.gov/caribbean-health-care/" target="_blank" rel="noopener">va.gov/caribbean</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="san juan" data-cat="veteranos">
+        <span class="tag tag-sage">VA</span>
+        <h4>Oficina Regional del VA — San Juan</h4>
+        <p class="resource-desc">Procesamiento de reclamaciones de compensacion por discapacidad, pensiones, educacion y beneficios de vivienda.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:18008271000">1-800-827-1000</a></span>
+          <address class="address">150 Ave. Carlos Chardon, Suite 232, San Juan PR 00918</address>
+          <span class="web"><a href="https://www.benefits.va.gov/sanjuan/" target="_blank" rel="noopener">benefits.va.gov/sanjuan</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="ponce" data-cat="veteranos">
+        <span class="tag tag-sage">VA</span>
+        <h4>Clinica de Veteranos — Ponce</h4>
+        <p class="resource-desc">Clinica satelite del VA con servicios de medicina primaria, salud mental y laboratorio para veteranos de la region sur.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7876417582">(787) 641-7582</a> ext. 35700</span>
+          <address class="address">Ponce, PR</address>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="mayaguez" data-cat="veteranos">
+        <span class="tag tag-sage">VA</span>
+        <h4>Clinica de Veteranos — Mayaguez</h4>
+        <p class="resource-desc">Clinica satelite del VA con servicios para veteranos de la region oeste.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7876417582">(787) 641-7582</a> ext. 36800</span>
+          <address class="address">Mayaguez, PR</address>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="veteranos">
+        <span class="tag tag-gold">Beneficio</span>
+        <h4>Exencion Contributiva para Veteranos</h4>
+        <p class="resource-desc">Exenciones de contribucion sobre la propiedad e ingresos para veteranos con discapacidad. Pensiones estatales adicionales.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.military.com/benefits/veteran-state-benefits/commonwealth-of-puerto-rico-veteran-benefits.html" target="_blank" rel="noopener">Beneficios PR (Military.com)</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="veteranos">
+        <span class="tag tag-ocean">Cuidadores</span>
+        <h4>Programa de Apoyo a Cuidadores de Veteranos</h4>
+        <p class="resource-desc">Estipendio mensual, entrenamiento, consejeria, respiro y cuidado temporal para cuidadores de veteranos elegibles.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:18552603274">1-855-260-3274</a></span>
+          <span class="web"><a href="https://www.caregiver.va.gov" target="_blank" rel="noopener">caregiver.va.gov</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="veteranos">
+        <span class="tag tag-plum">Salud Mental</span>
+        <h4>Linea de Crisis para Veteranos</h4>
+        <p class="resource-desc">Linea 24/7 con consejeros especializados para veteranos y sus familias en momentos de crisis emocional.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:988">988</a> (presione 1) / Texto: <a href="sms:838255">838255</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="veteranos">
+        <span class="tag tag-ocean">Hogar</span>
+        <h4>VA Aid & Attendance — Asistencia en el Hogar</h4>
+        <p class="resource-desc">Beneficio adicional de pension para veteranos que necesitan ayuda con actividades diarias o estan confinados al hogar.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:18008271000">1-800-827-1000</a></span>
+          <span class="web"><a href="https://www.va.gov/pension/aid-attendance-housebound/" target="_blank" rel="noopener">va.gov/pension</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ASISTENCIA FINANCIERA -->
+<div class="category-section" id="sec-finanzas">
+  <div class="container">
+    <button class="back-link" onclick="showCatGrid()">&#8592; Volver a categorias</button>
+    <h2>Asistencia Financiera</h2>
+    <p class="section-desc">Programas de ayuda economica, asistencia con utilidades, equipos medicos y beneficios para adultos mayores.</p>
+    <div class="resource-grid">
+      <div class="resource-card" data-muni="toda la isla" data-cat="finanzas">
+        <span class="tag tag-gold">Utilidades</span>
+        <h4>LIHWAP / Asistencia con Agua y Energia</h4>
+        <p class="resource-desc">Programa de asistencia para facturas de agua y energia a traves del Depto. de la Familia para hogares de bajos ingresos.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877218400">(787) 721-8400</a></span>
+          <span class="web"><a href="https://www.familia.pr.gov" target="_blank" rel="noopener">familia.pr.gov</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="finanzas">
+        <span class="tag tag-gold">Equipo Medico</span>
+        <h4>Lifeline — Sistema de Alerta Medica</h4>
+        <p class="resource-desc">Boton de emergencia personal gratuito a traves del Programa de Apoyo al Cuidador Familiar (PACF/OPPEA).</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877216121">(787) 721-6121</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="finanzas">
+        <span class="tag tag-sage">Gobierno</span>
+        <h4>SSI Suplemental — Seguro Social</h4>
+        <p class="resource-desc">Ingreso suplementario para personas de 65+ anos con recursos limitados. En PR, el beneficio SSI es de hasta $60/mes.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:18007721213">1-800-772-1213</a></span>
+          <span class="web"><a href="https://www.ssa.gov/ssi/" target="_blank" rel="noopener">ssa.gov/ssi</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="finanzas">
+        <span class="tag tag-ocean">Vivienda</span>
+        <h4>Seccion 8 — Vouchers de Vivienda</h4>
+        <p class="resource-desc">Asistencia federal de vivienda administrada por la Administracion de Vivienda Publica de PR.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877821015">(787) 782-1015</a></span>
+          <span class="web"><a href="https://www.avp.pr.gov" target="_blank" rel="noopener">avp.pr.gov</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="finanzas">
+        <span class="tag tag-plum">Telefono</span>
+        <h4>Lifeline — Descuento en Telefono/Internet</h4>
+        <p class="resource-desc">Descuento federal de $9.25/mes en servicio de telefono o internet para hogares de bajos ingresos.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.lifelinesupport.org" target="_blank" rel="noopener">lifelinesupport.org</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="finanzas">
+        <span class="tag tag-gold">Credito</span>
+        <h4>EITC — Credito por Trabajo</h4>
+        <p class="resource-desc">Credito contributivo estatal por ingreso del trabajo para personas de bajos y moderados ingresos en Puerto Rico.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://hacienda.pr.gov" target="_blank" rel="noopener">hacienda.pr.gov</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PREVENCION Y SEGURIDAD -->
+<div class="category-section" id="sec-prevencion">
+  <div class="container">
+    <button class="back-link" onclick="showCatGrid()">&#8592; Volver a categorias</button>
+    <h2>Prevencion y Seguridad</h2>
+    <p class="section-desc">Prevencion de caidas, fraude financiero, modificaciones al hogar y seguridad para adultos mayores.</p>
+    <div class="resource-grid">
+      <div class="resource-card" data-muni="toda la isla" data-cat="prevencion">
+        <span class="tag tag-coral">Fraude</span>
+        <h4>DACO — Proteccion al Consumidor</h4>
+        <p class="resource-desc">Querellas por fraude, estafas telefonicas, cobros indebidos. Proteccion especial para personas de edad avanzada.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877220940">(787) 722-0940</a></span>
+          <span class="web"><a href="https://www.daco.pr.gov" target="_blank" rel="noopener">daco.pr.gov</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="prevencion">
+        <span class="tag tag-coral">Fraude</span>
+        <h4>FTC — Reporte de Estafas (Federal)</h4>
+        <p class="resource-desc">Reporte estafas en linea, robo de identidad y fraude al consumidor. Disponible en espanol.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:18773824357">1-877-382-4357</a></span>
+          <span class="web"><a href="https://reportefraude.ftc.gov" target="_blank" rel="noopener">reportefraude.ftc.gov</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="prevencion">
+        <span class="tag tag-ocean">Caidas</span>
+        <h4>Prevencion de Caidas — CDC</h4>
+        <p class="resource-desc">Programa STEADI del CDC: ejercicios de balance, evaluacion de riesgos en el hogar y guias para profesionales de salud.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.cdc.gov/falls/" target="_blank" rel="noopener">cdc.gov/falls</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="prevencion">
+        <span class="tag tag-sage">Hogar</span>
+        <h4>Modificaciones al Hogar — HUD PR</h4>
+        <p class="resource-desc">Programas federales para instalar rampas, barras de agarre, ensanchar puertas y adaptar banos para personas con movilidad reducida.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:7877661600">(787) 766-1600</a></span>
+          <span class="web"><a href="https://www.hud.gov/states/puerto_rico" target="_blank" rel="noopener">hud.gov/puerto_rico</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="prevencion">
+        <span class="tag tag-gold">Vision</span>
+        <h4>Lions Club PR — Servicios de Vision</h4>
+        <p class="resource-desc">Examenes de vista, espejuelos y cirugias de cataratas gratuitas o a bajo costo para personas de escasos recursos.</p>
+        <div class="resource-contact">
+          <span class="web"><a href="https://www.lionsclubs.org/es" target="_blank" rel="noopener">lionsclubs.org</a></span>
+        </div>
+      </div>
+      <div class="resource-card" data-muni="toda la isla" data-cat="prevencion">
+        <span class="tag tag-plum">Audicion</span>
+        <h4>Audifonos y Servicios Auditivos — Medicare</h4>
+        <p class="resource-desc">Planes Medicare Advantage en PR cubren audifonos. Consulte su plan o llame al 1-800-MEDICARE para opciones.</p>
+        <div class="resource-contact">
+          <span class="phone"><a href="tel:18006331227">1-800-633-4227</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════════ MUNICIPIO VIEW ═══════════════ -->
 <div class="municipio-view" id="municipioView">
   <div class="container">
@@ -1395,7 +1640,8 @@ a:focus-visible { outline: 2px solid var(--ocean); outline-offset: 3px; border-r
     <strong>CuidaPR.org</strong><br>
     Un directorio gratuito para cuidadores, adultos mayores y familias en Puerto Rico.<br>
     <span style="opacity:0.5;font-size:13px;">Sitio informativo independiente. No afiliado a entidades gubernamentales ni comerciales.</span><br>
-    <span style="opacity:0.4;font-size:12px;margin-top:6px;display:inline-block;">&copy; 2026 CuidaPR.org — Hecho con amor para Puerto Rico</span>
+    <span style="opacity:0.4;font-size:12px;margin-top:6px;display:inline-block;">&copy; 2026 CuidaPR.org — Hecho con amor para Puerto Rico</span><br>
+    <a href="mailto:paganlugodj@gmail.com?subject=CuidaPR.org%20-%20Informacion%20incorrecta&body=Recurso:%0AMunicipio:%0ADetalle:" style="display:inline-block;margin-top:10px;background:var(--ocean);color:#fff;padding:8px 18px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700;">Reportar informacion incorrecta</a>
   </div>
 </footer>
 
@@ -1543,5 +1789,35 @@ document.getElementById('globalSearch').addEventListener('input', function() {
   document.querySelectorAll('.category-section').forEach(function(s) {
     if (!anyVisible[s.id]) s.classList.remove('visible');
   });
+});
+
+// Font size toggle
+var fontLevel = 0;
+function changeFontSize(dir) {
+  fontLevel = Math.max(-2, Math.min(4, fontLevel + dir));
+  document.body.style.fontSize = (17 + fontLevel * 2) + 'px';
+}
+
+// WhatsApp share buttons on every card
+var waSvg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785c-1.818 0-3.604-.488-5.158-1.412l-.37-.22-3.832 1.005 1.023-3.738-.24-.384A9.864 9.864 0 0 1 2.1 12.05C2.1 6.565 6.565 2.1 12.05 2.1c2.655 0 5.152 1.034 7.029 2.912a9.87 9.87 0 0 1 2.92 7.038c-.003 5.486-4.468 9.95-9.949 9.95zM12.05 0C5.405 0 .002 5.405 0 12.05c0 2.124.554 4.197 1.607 6.03L0 24l6.083-1.596A12.02 12.02 0 0 0 12.05 24.1C18.696 24.1 24.1 18.696 24.1 12.05 24.1 5.405 18.696 0 12.05 0z"/></svg>';
+
+document.querySelectorAll('.resource-card').forEach(function(card) {
+  var name = card.querySelector('h4');
+  if (!name) return;
+  var text = name.textContent;
+  var phone = card.querySelector('.phone a');
+  var msg = 'Mira este recurso de CuidaPR.org: *' + text + '*';
+  if (phone) msg += ' — Tel: ' + phone.textContent;
+  msg += ' — https://cuidapr.org';
+  var btn = document.createElement('button');
+  btn.className = 'wa-share';
+  btn.innerHTML = waSvg + ' Compartir';
+  btn.onclick = function(e) {
+    e.stopPropagation();
+    window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
+  };
+  var contact = card.querySelector('.resource-contact');
+  if (contact) contact.appendChild(btn);
+  else card.appendChild(btn);
 });
 </script>
