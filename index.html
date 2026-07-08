@@ -1,6 +1,19 @@
 <title>CuidaPR.org — Recursos y Servicios para Adultos Mayores y Cuidadores en Puerto Rico</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Directorio centralizado y gratuito de recursos para cuidadores, personas con Alzheimer, adultos mayores y familias en Puerto Rico. Busca por categoria o municipio.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cuidapr.org">
+<meta property="og:title" content="CuidaPR.org — Recursos para Cuidadores y Adultos Mayores en Puerto Rico">
+<meta property="og:description" content="Directorio gratuito con 100+ recursos organizados por categoria y municipio. Alzheimer, cuido en el hogar, veteranos, apoyo legal, emergencias y mas.">
+<meta property="og:image" content="https://cuidapr.org/og-image.png">
+<meta property="og:locale" content="es_PR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CuidaPR.org — Recursos para Familias en Puerto Rico">
+<meta name="twitter:description" content="100+ recursos gratuitos para cuidadores, adultos mayores y familias en los 78 municipios de PR.">
+<meta name="twitter:image" content="https://cuidapr.org/og-image.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0E7C86">
+<link rel="apple-touch-icon" href="/icon-192.png">
 <style>
 :root {
   --ocean: #0E7C86;
@@ -1820,4 +1833,9 @@ document.querySelectorAll('.resource-card').forEach(function(card) {
   if (contact) contact.appendChild(btn);
   else card.appendChild(btn);
 });
+
+// Register service worker for PWA
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
 </script>

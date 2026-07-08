@@ -1,0 +1,51 @@
+name: Weekly Link Check
+on:
+  schedule:
+    - cron: '0 12 * * 1'  # Every Monday at 12:00 UTC
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract and check URLs
+        run: |
+          echo "# CuidaPR Link Check — $(date)" > report.txt
+          echo "" >> report.txt
+
+          # Extract all href URLs from index.html
+          grep -oP 'href="(https?://[^"]+)"' index.html | \
+            sed 's/href="//;s/"$//' | sort -u > urls.txt
+
+          TOTAL=$(wc -l < urls.txt)
+          BROKEN=0
+
+          echo "Checking $TOTAL unique URLs..." >> report.txt
+          echo "" >> report.txt
+
+          while read url; do
+            STATUS=$(curl -o /dev/null -s -w "%{http_code}" -L --max-time 15 "$url" 2>/dev/null || echo "000")
+            if [ "$STATUS" -ge 400 ] || [ "$STATUS" = "000" ]; then
+              echo "❌ [$STATUS] $url" >> report.txt
+              BROKEN=$((BROKEN + 1))
+            fi
+          done < urls.txt
+
+          echo "" >> report.txt
+          echo "Total: $TOTAL | Broken: $BROKEN" >> report.txt
+
+          cat report.txt
+
+          if [ "$BROKEN" -gt 0 ]; then
+            echo "::warning::$BROKEN broken link(s) found"
+          fi
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-report
+          path: report.txt
+          retention-days: 30
